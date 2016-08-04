@@ -1,7 +1,8 @@
 package com.mvalho.study.games.logicofgames.cap01;
-import javax.swing.Jframe;
-import javax.swing.JPanel;
 import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Janela extends JFrame {
 	private JPanel tela;
@@ -9,7 +10,7 @@ public class Janela extends JFrame {
 	public Janela() {
 		tela = new JPanel() {
 			@Override
-			public void paintComponent(Graphic g) {
+			public void paintComponent(Graphics g) {
 				
 			}
 		};

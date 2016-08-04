@@ -1,8 +1,9 @@
 package com.mvalho.study.games.logicofgames.cap01;
-import javax.swing.Jframe;
-import javax.swing.JPanel;
-import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class AnimaTelaDesenho extends JFrame {
 	private JPanel tela;
@@ -10,7 +11,7 @@ public class AnimaTelaDesenho extends JFrame {
 	public AnimaTelaDesenho() {
 		tela = new JPanel() {
 			@Override
-			public void paintComponent(Graphic g) {
+			public void paintComponent(Graphics g) {
 				g.setColor(Color.BLUE);
 				g.drawLine(0, 240, 640, 240);
 				g.drawRect(10, 25, 20, 20);
@@ -20,7 +21,7 @@ public class AnimaTelaDesenho extends JFrame {
 				g.fillRect(110, 125, 120, 120);
 				g.fillOval(230, 220, 240, 230);
 				g.setColor(Color.RED);
-				g.drawString("Eu Seria um ótimo score!". 5, 10);
+				g.drawString("Eu Seria um ótimo score!", 5, 10);
 			}
 		};
 

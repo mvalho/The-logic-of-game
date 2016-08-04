@@ -1,11 +1,16 @@
 package com.mvalho.study.games.logicofgames.cap01;
 
-import javax.swing.Jframe;
-import javax.swing.JPanel;
-import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class AnimacaoTela extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4647723881932316511L;
 	private JPanel tela;
 	private int fps = 1000 / 20;
 	private int count;
@@ -14,7 +19,7 @@ public class AnimacaoTela extends JFrame {
 	public void iniciaAnimacao() {
 		long prxAtualizacao = 0;
 		while(animate) {
-			if(System.currentTime >= prxAtualizacao) {
+			if(System.currentTimeMillis() >= prxAtualizacao) {
 				count++;
 				tela.repaint();
 
@@ -29,8 +34,13 @@ public class AnimacaoTela extends JFrame {
 
 	public AnimacaoTela() {
 		tela = new JPanel() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = -5949851992118152322L;
+
 			@Override
-			public void paintComponent(Graphic g) {
+			public void paintComponent(Graphics g) {
 				g.setColor(Color.WHITE);
 				g.fillRect(0, 0, tela.getWidth(), tela.getHeight());
 				g.drawLine(0, 240 + count, 640, 240 + count);
@@ -41,7 +51,7 @@ public class AnimacaoTela extends JFrame {
 				g.fillRect(110, 125, 120 - count, 120 - count);
 				g.fillOval(230, 220, 240 + count, 230);
 				g.setColor(Color.RED);
-				g.drawString("Eu seria um Ã³timo Score!" + count, 5, 10);
+				g.drawString("Eu seria um Ótimo Score!" + count, 5, 10);
 			}
 		};
 
